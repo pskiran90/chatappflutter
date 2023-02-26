@@ -7,6 +7,8 @@ import 'pages/auth/logginpage.dart';
 import 'pages/home_page.dart';
 import 'package:chatappflutter/shared/constants.dart';
 
+import 'pages/splash_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
@@ -55,7 +57,7 @@ class _MyAppState extends State<MyApp> {
           primaryColor: Constants().primaryColor,
           scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: _isSignedIn ? HomePage() : const LoginPage(),
+      home: _isSignedIn ? HomePage() : const SplashScreen(),
     );
   }
 }
