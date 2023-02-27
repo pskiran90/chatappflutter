@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => LoginPage()));
     });
@@ -35,16 +35,11 @@ class _SplashScreenState extends State<SplashScreen> {
             // height: 360,
             child: Image.asset('assets/chatapplogo.png'),
           ),
-          const Positioned(
-              bottom: 40,
-              left: 80,
-              child: Text(
-                'Howdy App',
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87),
-              ))
+          Positioned(
+            bottom: 30,
+            left: 80,
+            child: Image.asset('assets/name.png'),
+          )
         ],
       ),
     ));

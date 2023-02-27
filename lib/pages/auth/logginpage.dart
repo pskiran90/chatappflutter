@@ -40,25 +40,37 @@ class _LoginPageState extends State<LoginPage> {
                 child: Form(
                     key: formKey,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
+                        SizedBox(
+                            height: 280,
+                            width: 280,
+                            child: Image.asset("assets/chatapplogo.png")),
                         const Text(
-                          "Groupie",
+                          'Hello again!',
                           style: TextStyle(
-                              fontSize: 40, fontWeight: FontWeight.bold),
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87),
                         ),
-                        const SizedBox(height: 10),
-                        const Text("Login now to see what they are talking!",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/login.png"),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        const Text(
+                          'Welcome back you\'ve been missed',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Email",
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.email,
-                                color: Theme.of(context).primaryColor,
+                                color: Colors.black,
                               )),
                           onChanged: (val) {
                             setState(() {
@@ -80,9 +92,9 @@ class _LoginPageState extends State<LoginPage> {
                           obscureText: true,
                           decoration: textInputDecoration.copyWith(
                               labelText: "Password",
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.lock,
-                                color: Theme.of(context).primaryColor,
+                                color: Colors.black,
                               )),
                           validator: (val) {
                             if (val!.length < 6) {
@@ -102,20 +114,26 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: Theme.of(context).primaryColor,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30))),
-                            child: const Text(
-                              "Sign In",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                          child: SizedBox(
+                            height: 64,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      Theme.of(context).primaryColor,
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30))),
+                              child: const Text(
+                                "Sign In",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              onPressed: () {
+                                login();
+                              },
                             ),
-                            onPressed: () {
-                              login();
-                            },
                           ),
                         ),
                         const SizedBox(
@@ -127,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.black, fontSize: 14),
                           children: <TextSpan>[
                             TextSpan(
-                                text: "Register here",
+                                text: "   Sign up",
                                 style: const TextStyle(
                                     color: Colors.black,
                                     decoration: TextDecoration.underline),

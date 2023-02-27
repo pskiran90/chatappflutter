@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(
-          Icons.add,
+          Icons.message,
           color: Colors.white,
           size: 30,
         ),

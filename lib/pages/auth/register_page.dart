@@ -40,23 +40,35 @@ class _RegisterPageState extends State<RegisterPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        const Text(
-                          "Groupie",
-                          style: TextStyle(
-                              fontSize: 40, fontWeight: FontWeight.bold),
-                        ),
                         const SizedBox(height: 10),
+                        SizedBox(
+                            height: 280,
+                            width: 280,
+                            child: Image.asset("assets/chatapplogo.png")),
                         const Text(
-                            "Create your account now to chat and explore",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/register.png"),
+                          'Sign up',
+                          style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87),
+                        ),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        const Text(
+                          'See what other\'s are talking\n         create an account',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Full Name",
                               prefixIcon: Icon(
                                 Icons.person,
-                                color: Theme.of(context).primaryColor,
+                                color: Colors.black,
                               )),
                           onChanged: (val) {
                             setState(() {
@@ -79,7 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               labelText: "Email",
                               prefixIcon: Icon(
                                 Icons.email,
-                                color: Theme.of(context).primaryColor,
+                                color: Colors.black,
                               )),
                           onChanged: (val) {
                             setState(() {
@@ -103,7 +115,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               labelText: "Password",
                               prefixIcon: Icon(
                                 Icons.lock,
-                                color: Theme.of(context).primaryColor,
+                                color: Colors.black,
                               )),
                           validator: (val) {
                             if (val!.length < 6) {
@@ -125,14 +137,21 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: double.infinity,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Theme.of(context).primaryColor,
+                                backgroundColor: Theme.of(context).primaryColor,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
-                            child: const Text(
-                              "Register",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                            child: const SizedBox(
+                              height: 64,
+                              child: const Center(
+                                child: const Text(
+                                  "Register",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                             ),
                             onPressed: () {
                               register();
